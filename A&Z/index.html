@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styly.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>A&Z Corp</title>
+</head>
+<body>
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+
+
+    <header>
+        <logo><a href=""> <img src="az.png" alt=""> </a></logo>
+
+        <nav>
+            <ul>
+                <li > <a href="#home" active> Home</a></li>
+                <li><a href="#about"> About Us</a></li>
+                <li><a href="#services"> Services </a></li>
+                <li><a href="#contact"> Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" >
+        <h1>
+            Digitilize Your Dreams. 
+        </h1>
+    </section>
+
+    <section id="about">
+        <div class="us">
+            <h1>GOOD DAY!</h1>
+            <p>As shown by the name this is A and Z(individually), trying to innovate your businness. </p>
+            <br>
+               <p> We have a different approach, different backgrounds, different goals, different destiny but one thing has joined our path...</p>
+                
+                <br>   
+                <h3> Digitalization</h3>
+                <br>
+              <p>  You can grow your businness and along with help us polishing our skills.</p>
+                 <br>
+               <h3>  Client's satisfication is key to succcess for us.</h3>
+        </div>
+
+    </section>
+
+    <section id="services" class="services">
+        <h1>Services that may bring us close.</h1>
+        <div class="container">
+            
+            <div class="card">
+                
+                <h3>Web Development</h3>
+                <p>Take a step and get your website developed in order to meet Digitilized market.</p>
+                <div class="cover">
+
+
+                    <figure class="front">
+                        <img src="responsive.png" alt="">
+                        <h2>Web Development</h2>
+                    </figure>
+
+                    <figure class="back" >
+                        <img src="css.png" alt="">
+                    </figure>
+                
+                </div>
+            </div>
+
+            
+            <div class="card 2" >
+                
+                <h3>Web Design</h3>
+                <p>Take a step and get your website developed in order to meet Digitilized market.</p>
+                <div class="cover">
+
+
+                    <figure class="front">
+                        <img src="design1.png" alt="">
+                        <h2>Web Designing</h2>
+                    </figure>
+
+                    <figure class="back" >
+                        <img src="build.jpg" alt="">
+                    </figure>
+                
+                </div>
+            </div>
+
+
+
+
+
+            <div class="card 3">
+                
+                <h3>Grapich Designing</h3>
+                <p>Take a step and get your website developed in order to meet Digitilized market.</p>
+                <div class="cover">
+
+
+                    <figure class="front">
+                        <img src="design.png" alt="">
+                        <h2>Web Development</h2>
+                    </figure>
+
+                    <figure class="back" >
+                        <img src="illus.png" alt="">
+                    </figure>
+                
+                </div>
+            </div>
+
+
+        </div>
+
+          </section>
+
+          <section id="contact">
+            <h1>Want to join us?
+                <br>
+                or
+                <br>
+                have any quarries?
+            </h1>
+           
+            <a href="mailto:zahi.ilyas340@gmail.com">Mail Us </a>
+        </section>
+
+        <footer>
+            <h1>Meet Us On Following Plateforms</h1>
+
+            <ul>
+                <li> <a href="https://www.facebook.com/Zahida.illyas.333"> <img src="facebook (4).png" alt=""></a></li>
+                <li> <a href="#"><img src="whatsapp.png" alt=""></a></li>
+                <li> <a href="#"><img src="telegram.png" alt=""></a></li>
+                <li> <a href="#"><img src="github.png" alt=""></a></li>
+            </ul>
+        </footer>
+</body>
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+<script type="text/javascript">
+
+    function counter(){
+        var count = setInterval(function() {
+            var d = parseInt($('.counter').text());
+            $('.counter').text((d+1).toString());
+            if ( d == 99 ) {
+                clearInterval(count);
+                $('.counter').addClass('hide');
+                $('.preloader').addClass('active')
+            }
+        }, 10)
+    }
+
+    counter() 
+
+    window.addEventListener('scroll', function(){
+        var header = document.querySelector("header");
+        header.classList.toggle('sticky' , window.scrollY > 150);
+    })
+
+    window.addEventListener("scroll", function(){
+        var us = document.querySelector(".us");
+        us.classList.toggle("about-us", window.scrollY > 450)
+    })
+
+
+    
+    window.addEventListener("scroll", function(){
+        var serv = document.querySelector(".services");
+        serv.classList.toggle("serv", window.scrollY > 850)
+    })
+
+    window.addEventListener("scroll", function(){
+        var form = document.querySelector("form");
+        form.classList.toggle("form", window.scrollY > 1150)
+    })
+
+</script>
+</html>

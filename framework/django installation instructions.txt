@@ -1,0 +1,6 @@
+0: (to activate virtuall env) python -m venv env
+1: (in terminal) pip install django
+2: (to execute django project in same directory) django-admin startproject (folder name of your choice) .
+3: (to know our local host server code) python manage.py runserver
+ #in terminal window
+1: python manage.py startapp products

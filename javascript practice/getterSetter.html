@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var person = {
+            firstName: "zai",
+            lastName: "ilyas",
+
+            get fullName(){
+                console.log(`${person.firstName} ${person.lastName}`)
+            },
+
+            set fullName(value){
+                var parts = value.split(' ');
+                this.firstName =  parts[0];
+                this.lastName = parts[1]
+            }
+        };
+        
+
+        // we use getter to access properties
+        // and setters to change or mutate them
+
+        person.fullName = "ameen ilyas"
+        console.log(person)
+    </script>
+</body>
+</html>

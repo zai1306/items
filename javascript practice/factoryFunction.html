@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //alike a factory we create diffrent objects here in factory functions
+        const circle = {
+            radius: 1,
+            location:{
+                x:1,
+                y:1 
+            },
+            isVisible: true,
+            draw: function(){
+                console.log('draw')
+            }
+        };
+
+
+        function createCircle(radius) {
+            return {
+            radius, 
+            draw(){
+                console.log('draw')
+            }
+        }
+        };
+
+        const circle2 = createCircle(2);
+        console.log(circle2)
+    </script>
+</body>
+</html>

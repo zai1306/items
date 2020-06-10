@@ -1,0 +1,102 @@
+# Todo App in Python
+
+# Checklist for Development of Todo in Python!
+    # 1. Main Menu Designing
+    # 2. Add Task Feature Adding
+    # 3. View Task Feature Adding
+    # 4. Delete Task Feature Adding
+    # 5. Terminate App Feature Adding
+
+def isInteger(userInput):
+    try:
+        int(userInput)
+        return True
+    except ValueError:
+        return False
+        
+def menuMenu(menu):
+    print("----------------\n    Main Menu \n----------------\n")
+    for menuKey, menuName in menu.items():
+        print("{}. {}".format(menuKey, menuName))
+    userCommand = input("\nEnter Command: ")
+    return userCommand
+
+def addTask(taskDictionary):
+    print("\n-------------------\n    Adding Task\n-------------------\n")
+    taskIndex = len(taskDictionary) + 1
+    taskName = input("Task #{}: ".format(taskIndex))
+    taskDictionary.update({taskIndex : taskName})
+    print("Task #{} - Succesfully Added\n".format(taskIndex))
+  
+def viewTask(taskDictionary):
+    print("\n-----------------\n   Viewing Task  \n-----------------\n")
+    if len(taskDictionary) > 0:
+        for taskIndex, taskName in taskDictionary.items():
+            print("Task #{} - {}".format(taskIndex,taskName))
+        print("\n")
+    else:
+        print("No Task Found\n")
+        
+def deleteTask(taskDictionary):               
+    print("\n-----------------\n  Deleting Task  \n-----------------\n")
+    if len(taskDictionary) > 0:
+                for taskIndex, taskName in taskDictionary.items():
+                    print("Task #{} - {}".format(taskIndex, taskName))
+   
+                taskIndex = input("\nEnter Task Index eg. 1: ")
+    
+                if isInteger(taskIndex) == True:
+            
+                    taskIndex = int(taskIndex)
+                    if taskIndex in taskDictionary.keys():
+                        taskDictionary.pop(taskIndex)
+                        print("Task #{} - Successfully Deleted\n".format(taskIndex))
+                    else:
+                        print("Invalid Task Index, Try Valid Index\n")    
+                        
+                else:
+                    print("Invalid Task Index, Try Valid Index\n")
+
+    
+    else:
+        print("No Task Found\n")
+        
+menu = {
+    1 : "Add Task",
+    2 : "View Task",
+    3 : "Delete Tasks",
+    4 : "Terminate App"
+}
+
+taskDictionary = {}
+
+while (True):
+  
+    userCommand = menuMenu(menu)
+    
+    if isInteger(userCommand) == True:
+        userCommand = int(userCommand)
+        if userCommand > 0 and userCommand <= 4:
+            
+            # Add Tasks
+            if userCommand == 1:
+                addTask(taskDictionary)
+            
+            # View Tasks
+            if userCommand == 2:
+                viewTask(taskDictionary)
+            
+            # Delete Tasks
+            if userCommand == 3:
+                deleteTask(taskDictionary)
+            
+            # Terminate App
+            if userCommand == 4:
+                print("App Terminated")
+                break
+                
+        else:
+            print("Invalid Command, Try Valid Command\n")
+            
+    else:
+        print("Invalid Command, Try Valid Command\n")

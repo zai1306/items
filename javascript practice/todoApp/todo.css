@@ -1,0 +1,21 @@
+body{
+    font-family: sans-serif;
+    
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 40px;
+}
+input{
+    width: 350px;
+    height: 30px;
+    margin: 10px;
+}
+#empty{
+    border: 1px solid;
+}
